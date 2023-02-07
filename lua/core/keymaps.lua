@@ -16,3 +16,5 @@ keymap.set("n", "<C-L>", ":bnext<CR>")
 keymap.set("n", "<C-H>", ":bprevious<CR>")
 
 keymap.set('n', '<leader>fo', function() vim.lsp.buf.format { async = true } end)
+
+keymap.set("n", "<leader>t", ":terminal<CR>")
