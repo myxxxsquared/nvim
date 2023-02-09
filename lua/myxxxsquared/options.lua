@@ -23,4 +23,3 @@ opt.signcolumn = "yes"
 opt.splitright = true
 opt.splitbelow = true
 
-vim.cmd [[colorscheme monokai]]

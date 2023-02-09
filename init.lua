@@ -1,14 +1,27 @@
-require("plugins.plugins-setup")
-require("core.options")
-require("core.keymaps")
+local plugin_configs = {
+    "plugins",
+    "keymaps",
+    "monokai",
+    "lualine",
+    "nvim-tree",
+    "nvim-tmux-navigation",
+    "nvim-treesitter",
+    "lsp",
+    "nvim-autopairs",
+    "bufferline",
+    "git-signs",
+    "telescope",
+    "Comment",
+    "toggleterm",
+    "rust-tools",
+    "whichkey",
+    "options",
+}
 
-require("plugins.lualine")
-require("plugins.nvim-tree")
-require("plugins.treesitter")
-require("plugins.autopairs")
-require("plugins.lsp")
-require("plugins.cmp")
-require("plugins.comment")
-require("plugins.bufferline")
-require("plugins.gitsigns")
-require("plugins.telescope")
+for _, plugin_config in ipairs(plugin_configs) do
+    local package_name = "myxxxsquared." .. plugin_config
+    local status_ok, value = pcall(require, package_name)
+    if not status_ok then
+        print("Config failed: " .. plugin_config .. "\nErr:" .. value)
+    end
+end
