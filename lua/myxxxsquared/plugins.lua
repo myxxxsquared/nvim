@@ -11,33 +11,44 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-return require('packer').startup(function(use)
-        use 'wbthomason/packer.nvim'
-        use 'tanvirtin/monokai.nvim'
-        use 'nvim-tree/nvim-web-devicons'
-        use 'nvim-tree/nvim-web-devicons'
-        use 'nvim-lualine/lualine.nvim'
-        use 'nvim-tree/nvim-tree.lua'
-        use 'alexghergh/nvim-tmux-navigation'
-        use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-        use 'mrjones2014/nvim-ts-rainbow'
-        use "williamboman/mason.nvim"
-        use "williamboman/mason-lspconfig.nvim"
-        use "neovim/nvim-lspconfig"
-        use "hrsh7th/nvim-cmp"
-        use "hrsh7th/cmp-nvim-lsp"
-        use "hrsh7th/cmp-path"
-        use "windwp/nvim-autopairs"
-        use "numToStr/Comment.nvim"
-        use "akinsho/bufferline.nvim"
-        use "lewis6991/gitsigns.nvim"
-        use 'nvim-lua/plenary.nvim'
-        use 'nvim-telescope/telescope.nvim'
-        use "simrat39/rust-tools.nvim"
-        use "akinsho/toggleterm.nvim"
-        use "folke/which-key.nvim"
+local packer = require("packer")
+local util = require("packer.util")
 
-        if packer_bootstrap then
-            require('packer').sync()
-        end
-    end)
+local packer_spec = function(use)
+    use 'wbthomason/packer.nvim'
+    use 'tanvirtin/monokai.nvim'
+    use 'nvim-tree/nvim-web-devicons'
+    use 'nvim-lualine/lualine.nvim'
+    use 'nvim-tree/nvim-tree.lua'
+    use 'alexghergh/nvim-tmux-navigation'
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use 'mrjones2014/nvim-ts-rainbow'
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
+    use "neovim/nvim-lspconfig"
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/cmp-path"
+    use "windwp/nvim-autopairs"
+    use "numToStr/Comment.nvim"
+    use "akinsho/bufferline.nvim"
+    use "lewis6991/gitsigns.nvim"
+    use 'nvim-lua/plenary.nvim'
+    use 'nvim-telescope/telescope.nvim'
+    use "simrat39/rust-tools.nvim"
+    use "akinsho/toggleterm.nvim"
+    use "folke/which-key.nvim"
+
+    if packer_bootstrap then
+        packer.sync()
+    end
+end
+
+packer.startup {
+    packer_spec,
+    config = {
+        snapshot = util.join_paths(vim.fn.stdpath("config"), "packer-lock.json"),
+        snapshot_path = vim.fn.stdpath("config"),
+    }
+}
+
