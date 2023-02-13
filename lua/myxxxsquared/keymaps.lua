@@ -17,8 +17,8 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
-keymap("n", "<C-S-l>", ":bnext<CR>", opts)
-keymap("n", "<C-S-h>", ":bprevious<CR>", opts)
+keymap("n", "<A-l>", ":bnext<CR>", opts)
+keymap("n", "<A-h>", ":bprevious<CR>", opts)
 
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
