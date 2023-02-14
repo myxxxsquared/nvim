@@ -15,6 +15,7 @@ local plugin_configs = {
     "toggleterm",
     "rust-tools",
     "whichkey",
+    "leap-nvim",
     "options",
 }
 

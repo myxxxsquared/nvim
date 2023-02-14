@@ -40,6 +40,7 @@ local packer_spec = function(use)
     use "simrat39/rust-tools.nvim"
     use "akinsho/toggleterm.nvim"
     use "folke/which-key.nvim"
+    use "ggandor/leap.nvim"
 
     if packer_bootstrap then
         packer.sync()
@@ -49,8 +50,6 @@ end
 packer.startup {
     packer_spec,
     config = {
-        snapshot = util.join_paths(vim.fn.stdpath("config"), "packer-lock.json"),
-        snapshot_path = vim.fn.stdpath("config"),
     }
 }
 

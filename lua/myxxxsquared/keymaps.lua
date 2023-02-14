@@ -25,3 +25,5 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+keymap("n", "gD", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
